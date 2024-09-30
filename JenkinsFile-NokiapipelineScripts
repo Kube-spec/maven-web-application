@@ -1,0 +1,32 @@
+node{
+
+def mavenHome = ToolName: 'maven3.9.7'
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('H */24 * * *')])])
+
+echo "Build Number is: ${env.BUILD_NUMBER}"
+echo "Job Name is: ${env.JOB_NAME}"
+echo "Node Name is: ${env.NODE_NAME}"
+echo "Jenkins HomeDirectory is: ${env.JENKINS_HOME}"
+echo "Build Url is: ${env.BUILD_URL}"
+echo "Jenkins Url is: ${env.JENKINS_URL}"
+
+stage('CheckOutCode'){
+git branch: 'Development', credentialsId: '14a5c3ec-51b2-4c95-bf55-15948d5d7fe7', url: 'https://github.com/Kube-spec/maven-web-application.git'
+}
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+/*
+stage('UploadArtifactToNexus'){
+sh "${mavenHome}/bin/mvn clean deploy"
+}
+
+stage('UploadAppIntoTomcat'){
+sshagent(['cce891c5-65f5-4b58-b4e4-d287d2b4ab54']) {
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war testuser@192.168.1.20:/opt/apache-tomcat-8.5.99/webapps"
+}
+
+}
+*/
+}
