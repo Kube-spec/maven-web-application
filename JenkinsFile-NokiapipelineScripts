@@ -8,7 +8,7 @@ echo "Build Number is: ${env.BUILD_NUMBER}"
 echo "Job Name is: ${env.JOB_NAME}"
 echo "Node Name is: ${env.NODE_NAME}"
 echo "Jenkins HomeDirectory is: ${env.JENKINS_HOME}"
-echo "Build Url is: {env.BUILD_URL}"
+echo "Build Url is: ${env.BUILD_URL}"
 echo "Jenkins Url is: ${env.JENKINS_URL}"
 
 stage('CheckOutCode'){
