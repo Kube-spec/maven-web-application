@@ -17,6 +17,7 @@ git branch: 'Development', credentialsId: '14a5c3ec-51b2-4c95-bf55-15948d5d7fe7'
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
+/*
 stage('UploadArtifactToNexus'){
 sh "${mavenHome}/bin/mvn clean deploy"
 }
@@ -27,5 +28,5 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war testuser@19
 }
 
 }
-
+*/
 }
