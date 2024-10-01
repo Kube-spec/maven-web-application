@@ -96,14 +96,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.32.120:9980/mithuntechnologies/repository/canarabank-release/</url>
+	      <name>Telecom-spec Nokia Releases Nexus Repository</name>
+	      <url>http://192.168.1.40:9090/telecom-spec/repository/nokia-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.32.120:9980/mithuntechnologies/repository/canarabank-snapshot/</url>
+	      <name>Telecom-spec Nokia Snapshot Nexus Repository </name>
+	      <url>http://192.168.1.40:9090/telecom-spec/repository/nokia-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
